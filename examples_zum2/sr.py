@@ -48,3 +48,28 @@ for name,data in tqdm(files.items()):
   trans[name]=sent
 
 print(trans)
+
+
+def sr(f):
+    files={}
+    print(f)  
+    data=read(str(f))
+    files[f.stem]=data.data.squeeze().astype('float32')
+
+
+    Fs=data.rate
+    for name,d in files.items():
+        print(f'{name}: {d.size/Fs:0.2f}s')
+
+
+    trans={}
+    for name,data in tqdm(files.items()):
+        print(data)
+        feats=processor(data,sampling_rate=Fs,return_tensors='pt',padding=True)
+        print(feats)
+        print(feats.input_values.shape)
+        out=model(input_values=feats.input_values)
+        predicted_ids=torch.argmax(out.logits,dim=-1)
+        sent=processor.batch_decode(predicted_ids)[0]
+        trans[name]=sent
+    return trans
