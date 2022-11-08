@@ -4,8 +4,9 @@ For Polish speakers.
 
 # references
 
-1. [RealPython example](https://realpython.com/python-speech-recognition/#working-with-microphones)
-2. [Polish Speeach Recognition Models on Hugging Face](https://huggingface.co/models?language=pl&pipeline_tag=automatic-speech-recognition&sort=downloads). 
+1. [RealPython recording example](https://realpython.com/python-speech-recognition/#working-with-microphones)
+2. [RealPython .wav files playing example](https://realpython.com/playing-and-recording-sound-python/#pyaudio)
+3. [Polish Speeach Recognition Models on Hugging Face](https://huggingface.co/models?language=pl&pipeline_tag=automatic-speech-recognition&sort=downloads). 
 
 ## bash commands
 
