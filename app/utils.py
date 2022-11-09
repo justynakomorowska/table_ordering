@@ -12,12 +12,19 @@ import jiwer
 import arpa
 
 
-processor=Wav2Vec2Processor.from_pretrained('facebook/wav2vec2-base-10k-voxpopuli-ft-pl')
-model=Wav2Vec2ForCTC.from_pretrained('facebook/wav2vec2-base-10k-voxpopuli-ft-pl')
+MODELS = {
+    "voxpopuli": "facebook/wav2vec2-base-10k-voxpopuli-ft-pl",
+    "fb_large": "facebook/wav2vec2-large-960h-lv60-self", #pomyłka, to jest model nie dla języka polskiego
+    "alex_large":"alexcleu/wav2vec2-large-xlsr-polish"
+}
 
-#processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-large-960h-lv60-self")
-#model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-large-960h-lv60-self")
-   
+#USE = "voxpopuli"
+#USE = "fb_large"
+USE = "alex_large"
+
+processor=Wav2Vec2Processor.from_pretrained(MODELS[USE])
+model=Wav2Vec2ForCTC.from_pretrained(MODELS[USE])
+
 
 path = "."
 

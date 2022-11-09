@@ -24,6 +24,13 @@ pip install arpa
 ### **record.py** records what you're saying.
 ### **sr.py** stands for speech recognition. Blackbox model downloaded from HF transcripts the speech.
 
-Examples:
+#### Examples:
 1. run examples_pyaudio/record.py - output.wav will be generated 
 2. run examples_zum2sr.py - recorded text will be recognized. Best attempt.
+
+## Three models have been compared and on basis of WER value the best one has been chosen.
+1. [voxpopuli pl](https://huggingface.co/facebook/wav2vec2-base-10k-voxpopuli-ft-pl)
+2. [whisper base](https://huggingface.co/openai/whisper-base)
+3. [alexcleu large polish](https://huggingface.co/alexcleu/wav2vec2-large-xlsr-polish)
+
+The last one *alexcleu large polish* has the best performance. It is going to be used for table ordering transcription.
